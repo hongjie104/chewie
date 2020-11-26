@@ -220,6 +220,7 @@ class ChewieController extends ChangeNotifier {
     this.allowFullScreen = true,
     this.allowMuting = true,
     this.allowPlaybackSpeedChanging = true,
+    this.allowProgressBar = true,
     this.playbackSpeeds = const [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2],
     this.systemOverlaysOnEnterFullScreen,
     this.deviceOrientationsOnEnterFullScreen,
@@ -298,6 +299,8 @@ class ChewieController extends ChangeNotifier {
 
   /// Defines if the playback speed control should be shown
   final bool allowPlaybackSpeedChanging;
+
+  final bool allowProgressBar;
 
   /// Defines the set of allowed playback speeds user can change
   final List<double> playbackSpeeds;

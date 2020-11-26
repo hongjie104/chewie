@@ -155,12 +155,15 @@ class _CupertinoControlsState extends State<CupertinoControls> with SingleTicker
                     )
                   : Row(
                       children: <Widget>[
-                        _buildSkipBack(iconColor, barHeight),
+                        // _buildSkipBack(iconColor, barHeight),
                         _buildPlayPause(controller, iconColor, barHeight),
-                        _buildSkipForward(iconColor, barHeight),
-                        _buildPosition(iconColor),
-                        _buildProgressBar(),
-                        _buildRemaining(iconColor),
+                        // _buildSkipForward(iconColor, barHeight),
+                        if (chewieController.isFullScreen || chewieController.allowProgressBar)
+                          _buildPosition(iconColor),
+                        if (chewieController.isFullScreen || chewieController.allowProgressBar)
+                          _buildProgressBar(),
+                        if (chewieController.isFullScreen || chewieController.allowProgressBar)
+                          _buildRemaining(iconColor),
                         if (chewieController.allowPlaybackSpeedChanging)
                           _buildSpeedButton(controller, iconColor, barHeight),
                       ],
